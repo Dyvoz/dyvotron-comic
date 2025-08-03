@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const imagesPerChapter = 20; // Antal bilder per kapitel
-    const totalChapters = 5; // Uppskattat totalt antal kapitel du har/planerar (t.ex. om du har final1.png till final100.png, så är det 5 kapitel)
+    const imagesPerChapter = 20; // Number of images per chapter
+    const totalChapters = 5; // Estimated total number of chapters you have/plan (e.g., if you have final1.png to final100.png, it's 5 chapters)
 
-    // Elementreferenser
+    // Element references
     const prevChapterTop = document.getElementById('prevChapterTop');
     const nextChapterTop = document.getElementById('nextChapterTop');
     const prevChapterBottom = document.getElementById('prevChapterBottom');
@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const postCommentButton = document.getElementById('postCommentButton');
     const commentsList = document.getElementById('commentsList');
 
-    let currentChapterIndex = 0; // Kapitelindex (0-baserat)
+    let currentChapterIndex = 0; // Chapter index (0-based)
 
-    // Funktion för att uppdatera navigationsknapparnas tillstånd
+    // Function to update navigation button states (enabled/disabled)
     function updateNavigationButtons() {
         prevChapterTop.classList.toggle('disabled', currentChapterIndex === 0);
         prevChapterBottom.classList.toggle('disabled', currentChapterIndex === 0);
@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         nextChapterBottom.classList.toggle('disabled', currentChapterIndex >= totalChapters - 1);
     }
 
-    // Funktion för att ladda och visa ett specifikt kapitel
+    // Function to load and display a specific chapter
     function loadChapter(chapterIndex) {
-        // Kontrollera att kapitelindex är inom giltigt intervall
+        // Check if chapter index is within valid range
         if (chapterIndex < 0 || chapterIndex >= totalChapters) {
-            console.warn("Försöker ladda ogiltigt kapitelindex:", chapterIndex);
+            console.warn("Attempting to load invalid chapter index:", chapterIndex);
             return;
         }
 
@@ -38,50 +38,50 @@ document.addEventListener('DOMContentLoaded', () => {
         const startImageNum = (currentChapterIndex * imagesPerChapter) + 1;
         const endImageNum = startImageNum + imagesPerChapter - 1;
 
-        currentChapterTitle.textContent = `Kapitel ${currentChapterIndex + 1}`; // Visa 1-baserat kapitelnummer
+        currentChapterTitle.textContent = `Chapter ${currentChapterIndex + 1}`; // Display 1-based chapter number
 
-        // Rensa befintliga bilder
+        // Clear existing images
         comicPageWrapper.innerHTML = '';
 
-        // Ladda in bilder för det aktuella kapitlet
+        // Load images for the current chapter
         for (let i = startImageNum; i <= endImageNum; i++) {
             const img = document.createElement('img');
-            img.src = `final${i}.png`; // Antar att bilderna heter final1.png, final2.png, etc.
-            img.alt = `Dyvotron Kapitel ${currentChapterIndex + 1} Sida ${i - startImageNum + 1}`;
+            img.src = `final${i}.png`; // Assumes images are named final1.png, final2.png, etc.
+            img.alt = `Dyvotron Chapter ${currentChapterIndex + 1} Page ${i - startImageNum + 1}`;
             comicPageWrapper.appendChild(img);
         }
 
-        // Uppdatera chapter selector
+        // Update chapter selector dropdown
         chapterSelector.value = currentChapterIndex;
 
-        // Scrolla upp till toppen av sidan
+        // Scroll to the top of the page
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        // Uppdatera gillningar och kommentarer för det nya kapitlet (simulerat)
-        // I en riktig app skulle detta laddas från en server/databas
-        likeCountSpan.textContent = Math.floor(Math.random() * 100) + 50; // Slumpmässigt antal gillningar
+        // Update likes and comments for the new chapter (simulated)
+        // In a real application, this would be loaded from a server/database
+        likeCountSpan.textContent = Math.floor(Math.random() * 100) + 50; // Random number of likes
         likeButton.disabled = false;
-        likeButton.textContent = '❤️ Gilla Kapitel';
+        likeButton.textContent = '❤️ Like Chapter';
         
-        commentsList.innerHTML = '<div class="comment-item"><p><strong>System:</strong> Kommentarer för detta kapitel (Kapitel ' + (currentChapterIndex + 1) + ') är aktiva.</p></div>';
+        commentsList.innerHTML = '<div class="comment-item"><p><strong>System:</strong> Comments for this chapter (Chapter ' + (currentChapterIndex + 1) + ') are active.</p></div>';
         commentInput.value = '';
 
-        updateNavigationButtons(); // Uppdatera knapparnas tillstånd
+        updateNavigationButtons(); // Update button states
     }
 
-    // --- Initialisering ---
-    // Fyll chapter selector-rullgardinsmenyn
+    // --- Initialization ---
+    // Populate chapter selector dropdown
     for (let i = 0; i < totalChapters; i++) {
         const option = document.createElement('option');
         option.value = i;
-        option.textContent = `Kapitel ${i + 1}`;
+        option.textContent = `Chapter ${i + 1}`;
         chapterSelector.appendChild(option);
     }
 
-    // Ladda första kapitlet när sidan laddas
+    // Load the first chapter when the page loads
     loadChapter(currentChapterIndex);
 
-    // --- Eventlyssnare ---
+    // --- Event Listeners ---
     nextChapterTop.addEventListener('click', (e) => {
         e.preventDefault();
         if (currentChapterIndex < totalChapters - 1) {
@@ -115,30 +115,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     likeButton.addEventListener('click', () => {
-        // I en riktig app skulle du skicka gillningen till en server
-        // Här simulerar vi bara genom att öka antalet och inaktivera knappen
+        // In a real application, you'd send the like to a server
+        // Here, we just simulate by increasing the count and disabling the button
         if (!likeButton.disabled) {
             let currentLikes = parseInt(likeCountSpan.textContent);
             likeCountSpan.textContent = currentLikes + 1;
             likeButton.disabled = true;
-            likeButton.textContent = '❤️ Gillat!';
-            alert('Tack för din gillning! (Simulering)');
+            likeButton.textContent = '❤️ Liked!';
+            alert('Thanks for your like! (Simulation)');
         }
     });
 
     postCommentButton.addEventListener('click', () => {
         const commentText = commentInput.value.trim();
         if (commentText) {
-            // I en riktig app skulle du skicka kommentaren till en server och sedan ladda om listan
+            // In a real application, you'd send the comment to a server and then reload the list
             const newComment = document.createElement('div');
             newComment.classList.add('comment-item');
-            // Lägg till en tidsstämpel eller användarnamn för realism
-            newComment.innerHTML = `<p><strong>Användare (Du):</strong> ${commentText}</p>`;
-            commentsList.prepend(newComment); // Lägg till nya kommentarer överst
-            commentInput.value = ''; // Rensa inputfältet
-            alert('Din kommentar har skickats! (Simulering)');
+            // Add a timestamp or username for realism
+            newComment.innerHTML = `<p><strong>User (You):</strong> ${commentText}</p>`;
+            commentsList.prepend(newComment); // Add new comments at the top
+            commentInput.value = ''; // Clear input field
+            alert('Your comment has been posted! (Simulation)');
         } else {
-            alert('Vänligen skriv en kommentar innan du skickar.');
+            alert('Please write a comment before posting.');
         }
     });
 });
