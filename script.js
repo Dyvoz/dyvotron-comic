@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const imagesPerChapter = 20; // Number of images per chapter
+    const imagesPerChapter = 13; // Number of images per chapter
     const totalChapters = 4; // Estimated total number of chapters you have/plan (e.g., if you have final1.png to final100.png, it's 5 chapters)
 
     // Element references
