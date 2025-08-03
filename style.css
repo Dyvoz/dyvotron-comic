@@ -1,4 +1,4 @@
-/* Grundläggande Resets */
+/* Basic Resets */
 body, h1, h2, h3, p, ul, li, figure, figcaption, button, select, textarea {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body, h1, h2, h3, p, ul, li, figure, figcaption, button, select, textarea {
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Lätt grå bakgrund */
+    background-color: #f4f4f4; /* Light gray background */
     color: #333;
 }
 
@@ -19,15 +19,15 @@ body {
     padding: 20px 0;
 }
 
-/* Färgpalett - Använd blått som huvudfärg */
+/* Color Palette - Using blue as the primary accent color */
 :root {
-    --primary-blue: #007bff; /* Standardblå */
-    --hover-blue: #0056b3;   /* Mörkare blå vid hover */
-    --light-blue: #e0f2ff;   /* Mycket ljusblå */
-    --text-color: #333;      /* Standard textfärg */
-    --border-color: #ddd;    /* Standard kantfärg */
-    --bg-dark: #222;         /* Mörk bakgrund */
-    --bg-light: #fff;        /* Ljus bakgrund */
+    --primary-blue: #007bff; /* Standard blue */
+    --hover-blue: #0056b3;   /* Darker blue on hover */
+    --light-blue: #e0f2ff;   /* Very light blue */
+    --text-color: #333;      /* Standard text color */
+    --border-color: #ddd;    /* Standard border color */
+    --bg-dark: #222;         /* Dark background */
+    --bg-light: #fff;        /* Light background */
 }
 
 /* Header Styling */
@@ -35,22 +35,41 @@ body {
     background-color: var(--bg-dark);
     color: #fff;
     padding: 15px 0;
-    border-bottom: 5px solid var(--primary-blue); /* Blå linje under headern */
+    border-bottom: 5px solid var(--primary-blue); /* Blue line under header */
     text-align: center;
 }
 
 .main-header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    color: #fff; /* Vit text för titeln */
+    color: #fff; /* White text for title */
 }
+
+/* Social Icons Styling */
+.social-icons {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.8em; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-blue); /* Blue on hover */
+}
+
 
 .top-nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    flex-wrap: wrap; /* För responsivitet */
+    flex-wrap: wrap; /* For responsiveness */
 }
 
 .nav-button, .blue-button {
@@ -69,7 +88,7 @@ body {
     background-color: var(--hover-blue);
 }
 
-.nav-button.disabled { /* För att markera inaktiva knappar */
+.nav-button.disabled { /* To mark inactive buttons */
     background-color: #cccccc;
     cursor: not-allowed;
 }
@@ -82,12 +101,12 @@ body {
     color: var(--text-color);
     font-size: 1em;
     cursor: pointer;
-    appearance: none; /* Tar bort standard pil */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L146.2%2C68.9L16.9%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L1.7%2C192.4c-3.2%2C-3.2-3.2%2C-8.3%2C0%2C-11.5L140.4%2C2.7c3.2%2C-3.2%2C8.3%2C-3.2%2C11.5%2C0l138.3%2C178.2c3.2%2C3.2%2C3.2%2C8.3%2C0%2C11.5L287%2C197.6z%22%2F%3E%3C%2Fsvg%3E'); /* Egen pil */
+    appearance: none; /* Removes default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L146.2%2C68.9L16.9%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L1.7%2C192.4c-3.2%2C-3.2-3.2%2C-8.3%2C0%2C-11.5L140.4%2C2.7c3.2%2C-3.2%2C8.3%2C-3.2%2C11.5%2C0l138.3%2C178.2c3.2%2C3.2%2C3.2%2C8.3%2C0%2C11.5L287%2C197.6z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
-    padding-right: 30px; /* Plats för pil */
+    padding-right: 30px; /* Space for arrow */
 }
 
 /* Main Content Area */
@@ -100,15 +119,15 @@ body {
 .comic-container h2 {
     text-align: center;
     margin-bottom: 25px;
-    color: var(--primary-blue); /* Kapitelrubrik i blått */
+    color: var(--primary-blue); /* Chapter heading in blue */
     font-size: 2em;
 }
 
 .comic-page-wrapper {
     display: flex;
-    flex-direction: column; /* Stapla bilder vertikalt */
+    flex-direction: column; /* Stack images vertically */
     align-items: center;
-    gap: 15px; /* Mellanrum mellan sidor */
+    gap: 15px; /* Space between pages */
 }
 
 .comic-page-wrapper img {
@@ -125,11 +144,11 @@ body {
 }
 
 .likes-comments-section {
-    background-color: var(--light-blue); /* Ljusblå bakgrund för interaktionssektionen */
+    background-color: var(--light-blue); /* Light blue background for interaction section */
     padding: 25px;
     border-radius: 8px;
     margin-top: 30px;
-    border: 1px solid var(--primary-blue); /* Blå kant */
+    border: 1px solid var(--primary-blue); /* Blue border */
 }
 
 .likes-system {
@@ -151,7 +170,7 @@ body {
     margin-right: 10px;
 }
 
-.like-button:hover:not(:disabled) { /* Hover-effekt bara när knappen inte är disabled */
+.like-button:hover:not(:disabled) { /* Hover effect only when button is not disabled */
     background-color: var(--hover-blue);
 }
 
@@ -162,11 +181,11 @@ body {
 
 .comments-section h3 {
     margin-bottom: 15px;
-    color: var(--primary-blue); /* Rubrik för kommentarer i blått */
+    color: var(--primary-blue); /* Comments heading in blue */
 }
 
 .comments-list {
-    max-height: 250px; /* Begränsa höjden för scrollning */
+    max-height: 250px; /* Limit height for scrolling */
     overflow-y: auto;
     border: 1px solid var(--border-color);
     padding: 10px;
@@ -204,7 +223,7 @@ textarea#commentInput {
     margin-top: 30px;
 }
 
-/* Responsiv design för mindre skärmar */
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .main-header h1 {
         font-size: 2em;
