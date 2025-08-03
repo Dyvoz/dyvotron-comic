@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dyvotron - Webcomic</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="main-header">
         <div class="container">
+            <div class="social-icons">
+                <a href="https://instagram.com/dyvotron" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@dyvotron" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://tiktok.com/@dyvotron" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://twitter.com/dyvotron" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
             <h1>DYVOTRON</h1>
             <nav class="top-nav">
-                <a href="#" id="prevChapterTop" class="nav-button prev-button">&laquo; Föregående Kapitel</a>
-                <a href="#" id="nextChapterTop" class="nav-button">&raquo; Nästa Kapitel</a>
+                <a href="#" id="prevChapterTop" class="nav-button prev-button">&laquo; Previous Chapter</a>
+                <a href="#" id="nextChapterTop" class="nav-button">&raquo; Next Chapter</a>
                 <div class="chapter-select-wrapper">
                     <select id="chapterSelector">
                         </select>
                 </div>
-                <a href="toys.html" class="nav-button">Leksaker</a>
+                <a href="toys.html" class="nav-button">Toys</a>
             </nav>
         </div>
     </header>
@@ -30,22 +37,22 @@
                 </div>
 
             <div class="bottom-nav-area">
-                <a href="#" id="prevChapterBottom" class="nav-button prev-button">&laquo; Föregående Kapitel</a>
-                <a href="#" id="nextChapterBottom" class="nav-button">&raquo; Nästa Kapitel</a>
+                <a href="#" id="prevChapterBottom" class="nav-button prev-button">&laquo; Previous Chapter</a>
+                <a href="#" id="nextChapterBottom" class="nav-button">&raquo; Next Chapter</a>
                 <div class="likes-comments-section">
                     <div class="likes-system">
-                        <button id="likeButton" class="like-button">❤️ Gilla Kapitel</button>
-                        <span id="likeCount">0</span> gillningar
+                        <button id="likeButton" class="like-button">❤️ Like Chapter</button>
+                        <span id="likeCount">0</span> likes
                     </div>
                     <div class="comments-section">
-                        <h3>Kommentarer</h3>
+                        <h3>Comments</h3>
                         <div id="commentsList" class="comments-list">
                             <div class="comment-item">
-                                <p><strong>Användare123:</strong> Fantastiskt kapitel! Älskar designen på Is-Dyvotronen!</p>
+                                <p><strong>User123:</strong> Amazing chapter! Love the design of the Ice Dyvotron!</p>
                             </div>
                         </div>
-                        <textarea id="commentInput" placeholder="Skriv din kommentar här..."></textarea>
-                        <button id="postCommentButton" class="blue-button">Skicka Kommentar</button>
+                        <textarea id="commentInput" placeholder="Write your comment here..."></textarea>
+                        <button id="postCommentButton" class="blue-button">Post Comment</button>
                     </div>
                 </div>
             </div>
@@ -54,7 +61,7 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 Dyvotron - Alla rättigheter reserverade.</p>
+            <p>&copy; 2025 Dyvotron - All rights reserved.</p>
         </div>
     </footer>
 
