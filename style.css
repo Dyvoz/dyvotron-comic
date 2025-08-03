@@ -1,9 +1,221 @@
-body {
-  font-family: sans-serif;
-  text-align: center;
-  margin: 2em;
+/* Grundläggande Resets */
+body, h1, h2, h3, p, ul, li, figure, figcaption, button, select, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-a {
-  text-decoration: none;
-  color: blue;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Lätt grå bakgrund */
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Färgpalett - Använd blått som huvudfärg */
+:root {
+    --primary-blue: #007bff; /* Standardblå */
+    --hover-blue: #0056b3;   /* Mörkare blå vid hover */
+    --light-blue: #e0f2ff;   /* Mycket ljusblå */
+    --text-color: #333;      /* Standard textfärg */
+    --border-color: #ddd;    /* Standard kantfärg */
+    --bg-dark: #222;         /* Mörk bakgrund */
+    --bg-light: #fff;        /* Ljus bakgrund */
+}
+
+/* Header Styling */
+.main-header {
+    background-color: var(--bg-dark);
+    color: #fff;
+    padding: 15px 0;
+    border-bottom: 5px solid var(--primary-blue); /* Blå linje under headern */
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff; /* Vit text för titeln */
+}
+
+.top-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* För responsivitet */
+}
+
+.nav-button, .blue-button {
+    background-color: var(--primary-blue);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover, .blue-button:hover {
+    background-color: var(--hover-blue);
+}
+
+.nav-button.disabled { /* För att markera inaktiva knappar */
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.chapter-select-wrapper select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    font-size: 1em;
+    cursor: pointer;
+    appearance: none; /* Tar bort standard pil */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L146.2%2C68.9L16.9%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L1.7%2C192.4c-3.2%2C-3.2-3.2%2C-8.3%2C0%2C-11.5L140.4%2C2.7c3.2%2C-3.2%2C8.3%2C-3.2%2C11.5%2C0l138.3%2C178.2c3.2%2C3.2%2C3.2%2C8.3%2C0%2C11.5L287%2C197.6z%22%2F%3E%3C%2Fsvg%3E'); /* Egen pil */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; /* Plats för pil */
+}
+
+/* Main Content Area */
+.comic-container {
+    background-color: var(--bg-light);
+    padding: 30px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.comic-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-blue); /* Kapitelrubrik i blått */
+    font-size: 2em;
+}
+
+.comic-page-wrapper {
+    display: flex;
+    flex-direction: column; /* Stapla bilder vertikalt */
+    align-items: center;
+    gap: 15px; /* Mellanrum mellan sidor */
+}
+
+.comic-page-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Bottom Navigation & Interactions */
+.bottom-nav-area {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.likes-comments-section {
+    background-color: var(--light-blue); /* Ljusblå bakgrund för interaktionssektionen */
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px solid var(--primary-blue); /* Blå kant */
+}
+
+.likes-system {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.like-button {
+    background-color: var(--primary-blue);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.like-button:hover:not(:disabled) { /* Hover-effekt bara när knappen inte är disabled */
+    background-color: var(--hover-blue);
+}
+
+.like-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.comments-section h3 {
+    margin-bottom: 15px;
+    color: var(--primary-blue); /* Rubrik för kommentarer i blått */
+}
+
+.comments-list {
+    max-height: 250px; /* Begränsa höjden för scrollning */
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: var(--bg-light);
+    border-radius: 5px;
+}
+
+.comment-item {
+    border-bottom: 1px dashed var(--border-color);
+    padding: 10px 0;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+textarea#commentInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    min-height: 80px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+/* Footer Styling */
+.main-footer {
+    background-color: var(--bg-dark);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Responsiv design för mindre skärmar */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2em;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .comic-container h2 {
+        font-size: 1.5em;
+    }
 }
