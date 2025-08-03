@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>Dyvotron Web Comic</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyvotron - Webcomic</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Välkommen till Dyvotron!</h1>
-  <p><a href="comics/001.html">Läs första avsnittet</a></p>
+    <header class="main-header">
+        <div class="container">
+            <h1>DYVOTRON</h1>
+            <nav class="top-nav">
+                <a href="#" id="prevChapterTop" class="nav-button prev-button">&laquo; Föregående Kapitel</a>
+                <a href="#" id="nextChapterTop" class="nav-button">&raquo; Nästa Kapitel</a>
+                <div class="chapter-select-wrapper">
+                    <select id="chapterSelector">
+                        </select>
+                </div>
+                <a href="toys.html" class="nav-button">Leksaker</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="comic-container">
+        <div class="container">
+            <h2 id="currentChapterTitle"></h2>
+            <div id="comicPageWrapper" class="comic-page-wrapper">
+                </div>
+
+            <div class="bottom-nav-area">
+                <a href="#" id="prevChapterBottom" class="nav-button prev-button">&laquo; Föregående Kapitel</a>
+                <a href="#" id="nextChapterBottom" class="nav-button">&raquo; Nästa Kapitel</a>
+                <div class="likes-comments-section">
+                    <div class="likes-system">
+                        <button id="likeButton" class="like-button">❤️ Gilla Kapitel</button>
+                        <span id="likeCount">0</span> gillningar
+                    </div>
+                    <div class="comments-section">
+                        <h3>Kommentarer</h3>
+                        <div id="commentsList" class="comments-list">
+                            <div class="comment-item">
+                                <p><strong>Användare123:</strong> Fantastiskt kapitel! Älskar designen på Is-Dyvotronen!</p>
+                            </div>
+                        </div>
+                        <textarea id="commentInput" placeholder="Skriv din kommentar här..."></textarea>
+                        <button id="postCommentButton" class="blue-button">Skicka Kommentar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Dyvotron - Alla rättigheter reserverade.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
