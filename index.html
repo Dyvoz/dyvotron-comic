@@ -3,67 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dyvotron - Webcomic</title>
+    <title>Dyvotron - Home</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://instagram.com/dyvotron" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@dyvotron" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://tiktok.com/@dyvotron" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://twitter.com/dyvotron" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            <h1>DYVOTRON</h1>
-            <nav class="top-nav">
-                <a href="#" id="prevChapterTop" class="nav-button prev-button">&laquo; Previous Chapter</a>
-                <a href="#" id="nextChapterTop" class="nav-button">&raquo; Next Chapter</a>
-                <div class="chapter-select-wrapper">
-                    <select id="chapterSelector">
-                        </select>
+    <header class="home-header">
+        <div class="container header-content">
+            <a href="index.html" class="home-link"><img src="icon-18.png" alt="DYVOTRON Logo Text" class="dyvotron-text-logo"></a>
+            <div class="header-right-group">
+                <div class="dark-mode-toggle">
+                    <input type="checkbox" id="darkModeSwitch">
+                    <label for="darkModeSwitch" class="toggle-label"></label>
                 </div>
-                <a href="toys.html" class="nav-button">Toys</a>
-            </nav>
+                <div class="social-icons">
+                    <a href="https://instagram.com/dyvotron" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@dyvotron" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@dyvotron" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://twitter.com/dyvotron" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="comic-container">
-        <div class="container">
-            <h2 id="currentChapterTitle"></h2>
-            <div id="comicPageWrapper" class="comic-page-wrapper">
-                </div>
-
-            <div class="bottom-nav-area">
-                <a href="#" id="prevChapterBottom" class="nav-button prev-button">&laquo; Previous Chapter</a>
-                <a href="#" id="nextChapterBottom" class="nav-button">&raquo; Next Chapter</a>
-                <div class="likes-comments-section">
-                    <div class="likes-system">
-                        <button id="likeButton" class="like-button">❤️ Like Chapter</button>
-                        <span id="likeCount">0</span> likes
-                    </div>
-                    <div class="comments-section">
-                        <h3>Comments</h3>
-                        <div id="commentsList" class="comments-list">
-                            <div class="comment-item">
-                                <p><strong>User123:</strong> Amazing chapter! Love the design of the Ice Dyvotron!</p>
-                            </div>
-                        </div>
-                        <textarea id="commentInput" placeholder="Write your comment here..."></textarea>
-                        <button id="postCommentButton" class="blue-button">Post Comment</button>
-                    </div>
-                </div>
+    <main class="home-main">
+        <div class="container home-grid">
+            <div class="home-box webcomic-box">
+                <a href="comic.html">
+                    <img src="icon-02.png" alt="Dyvotron Logo" class="home-logo">
+                    <h3>Web Comic</h3>
+                    <p>Dive into the Dyvotron universe!</p>
+                </a>
+            </div>
+            <div class="home-box toys-box">
+                <a href="toys.html">
+                    <img src="icon-02.png" alt="Dyvotron Logo" class="home-logo">
+                    <h3>Toys</h3>
+                    <p>Discover the upcoming Dyvotron figures!</p>
+                </a>
+            </div>
+            <div class="home-box contact-box">
+                <a href="#" id="contactButton">
+                    <img src="icon-02.png" alt="Dyvotron Logo" class="home-logo">
+                    <h3>Contact</h3>
+                    <p>Get in touch with the Dyvotron team.</p>
+                </a>
             </div>
         </div>
     </main>
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 Dyvotron - All rights reserved.</p>
+            <p>© 2025 Dyvotron - All rights reserved.</p>
         </div>
     </footer>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h3>Contact Dyvotron</h3>
+            <p>For inquiries, collaborations, or just to say hello, feel free to send us an email:</p>
+            <p class="contact-email">dyvotron@gmail.com</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
