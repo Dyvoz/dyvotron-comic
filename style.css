@@ -19,15 +19,15 @@ body {
     padding: 20px 0;
 }
 
-/* Color Palette - Using blue as the primary accent color */
+/* Color Palette */
 :root {
     --primary-blue: #007bff; /* Standard blue */
     --hover-blue: #0056b3;   /* Darker blue on hover */
     --light-blue: #e0f2ff;   /* Very light blue */
     --text-color: #333;      /* Standard text color */
     --border-color: #ddd;    /* Standard border color */
-    --bg-dark: #222;         /* Dark background */
-    --bg-light: #fff;        /* Light background */
+    --bg-dark: #222;         /* Dark background for header/footer */
+    --bg-light: #fff;        /* Light background for comic container */
 }
 
 /* Header Styling */
@@ -69,14 +69,14 @@ body {
     color: var(--primary-blue); /* Blue on hover */
 }
 
-
+/* Top Navigation Bar */
 .top-nav {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* This centers the items and spaces them evenly */
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap; /* For responsiveness */
-    margin-top: 20px; /* Space between social and nav */
+    gap: 20px; /* Space between navigation items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    margin-top: 20px; /* Space between social icons and nav */
 }
 
 .nav-button {
@@ -95,7 +95,7 @@ body {
     background-color: var(--hover-blue);
 }
 
-.nav-button.disabled { /* To mark inactive buttons */
+.nav-button.disabled { /* Style for inactive navigation buttons */
     background-color: #cccccc;
     cursor: not-allowed;
 }
@@ -109,14 +109,15 @@ body {
     font-size: 1em;
     cursor: pointer;
     appearance: none; /* Removes default arrow */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L146.2%2C68.9L16.9%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L1.7%2C192.4c-3.2%2C-3.2-3.2%2C-8.3%2C0%2C-11.5L140.4%2C2.7c3.2%2C-3.2%2C8.3%2C-3.2%2C11.5%2C0l138.3%2C178.2c3.2%2C3.2%2C3.2%2C8.3%2C0%2C11.5L287%2C197.6z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    /* Custom arrow for dropdown */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L146.2%2C68.9L16.9%2C197.6c-3.2%2C3.2-8.3%2C3.2-11.5%2C0L1.7%2C192.4c-3.2%2C-3.2-3.2%2C-8.3%2C0%2C-11.5L140.4%2C2.7c3.2%2C-3.2%2C8.3%2C-3.2%2C11.5%2C0l138.3%2C178.2c3.2%2C3.2%2C3.2%2C8.3%2C0%2C11.5L287%2C197.6z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
     padding-right: 30px; /* Space for arrow */
 }
 
-/* Main Content Area */
+/* Main Comic Content Area */
 .comic-container {
     background-color: var(--bg-light);
     padding: 30px 0;
@@ -144,7 +145,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Bottom Navigation */
+/* Bottom Navigation Area */
 .bottom-nav-area {
     margin-top: 30px;
     text-align: center;
