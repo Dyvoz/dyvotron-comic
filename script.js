@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //   Chapter 3 has 25 pages (final36.png to final60.png)
     // Ensure your comic page images (final1.png, final2.png, etc.) exist for the total count.
     const chapterPageCounts = [
-        20, // Example: Chapter 1 has 20 pages
+        13, // Example: Chapter 1 has 20 pages
         15, // Example: Chapter 2 has 15 pages
-        25  // Example: Chapter 3 has 25 pages
+        25,
+        5   // Example: Chapter 3 has 25 pages
         // ADD MORE NUMBERS HERE for additional chapters, e.g., 30, for Chapter 4 with 30 pages
     ];
 
